@@ -20,4 +20,17 @@ namespace SuleymanSeyahat.Models.Siniflar
 		public DbSet<iletisim> iletisims { get; set; }
 		public DbSet<Yorumlar> Yorumlars { get; set; }
 	}
+
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	{
+		modelBuilder.Entity<Blog>().HasData(
+			new Blog { ID = 4, Baslik = "elma",  Aciklama = "Aciklama1", BlogImage = "images/service-icon-01.png" },
+			new Blog { ID = 5, Baslik = "armut", Aciklama = "Aciklama2", BlogImage = "images/service-icon-03.png" },
+			new Blog { ID = 6, Baslik = "ayva",  Aciklama = "Aciklama3", BlogImage = "images/service-icon-01.png" },
+			new Blog { ID = 7, Baslik = "karpuz",Aciklama = "Aciklama4", BlogImage = "images/service-icon-02.png" },
+			new Blog { ID = 8, Baslik = "erik",  Aciklama = "Aciklama5", BlogImage = "images/service-icon-01.png" },
+			new Blog { ID = 9, Baslik = "muz",   Aciklama = "Aciklama6", BlogImage = "images/service-icon-03.png" }
+		);
+
+	}
 }
